@@ -11,19 +11,18 @@
 	<script src="jquery-2.1.4.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="angulartypeahead.js"></script>
 	<script type="text/javascript" src="controller.js"></script>
-	<script type="text/javascript" src="script.js"></script>
 
 
 </head>
-<body ><!-- ng-controller="stockCtrl" -->
+<body ng-controller="stockCtrl">
 
 	<div id="wrapper">
 		<div id="left-all-stocks">
 			<form ng-submit="getStocks()">
 
 				<div id="get-stock-text">What Stocks would you like to search for? separate with comma (i.e. goog, hog, yhoo)</div>
-				<div id="get-stock-input" ng-controller="TypeaheadCtrl">
-					<input id="inputvalue" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control" type="text" ng-model="selected"><!-- ng-model="userStocks" -->
+				<div id="get-stock-input" >
+					<input id="inputvalue" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control" type="text" ng-model="selected" ng-change="userStocks=selected">
 					<input class="btn" type="submit">
 				</div>
 			</form>
