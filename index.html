@@ -22,7 +22,7 @@
 
 				<div id="get-stock-text">What Stocks would you like to search for? separate with comma (i.e. goog, hog, yhoo)</div>
 				<div id="get-stock-input" >
-					<input id="inputvalue" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control" type="text" ng-model="selected" ng-change="userStocks=selected">
+					<input id="inputvalue" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control" type="text" ng-model="userStocks" ng-change="selected=userStocks">
 					<input class="btn" type="submit">
 				</div>
 			</form>
