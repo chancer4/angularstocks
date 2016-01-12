@@ -5,11 +5,60 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
 	<link rel="stylesheet" href="styles.css">
-	<script src="angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+	<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.0.3.js"></script>
+	<script src="jquery-2.1.4.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="angulartypeahead.js"></script>
 	<script type="text/javascript" src="controller.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+
 
 </head>
-<body ng-controller="stockCtrl">
+<body ><!-- ng-controller="stockCtrl" -->
+
+	<div id="wrapper">
+		<div id="left-all-stocks">
+			<form ng-submit="getStocks()">
+
+				<div id="get-stock-text">What Stocks would you like to search for? separate with comma (i.e. goog, hog, yhoo)</div>
+				<div id="get-stock-input" ng-controller="TypeaheadCtrl">
+					<input id="inputvalue" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control" type="text" ng-model="selected"><!-- ng-model="userStocks" -->
+					<input class="btn" type="submit">
+				</div>
+			</form>
+			<div id="{{stock.Symbol}}" ng-click="loadStock(stock)" ng-repeat="stock in listOfStocks">
+				<span class="comany-name">Name: {{stock.Name}}</span></br>
+				<span class="stock-change {{getChangeClass(stock.Change)}}">% Change: {{stock.Change}}</span><br>
+				<span class="stock-symbol">Symbol: {{stock.Symbol}}</span>
+			</div>
+		</div>
+		<div id="center-single-stock">
+			<div id="stock-filter">
+				Filter: <input type="text" ng-model="stockFilter">
+			</div>
+				<!-- have angular greate one div for each prop in each stock -->
+				<div id="detail" ng-repeat="detail in dataList | filter:stockFilter">
+					<div class="stock-properties">
+						
+						<div class="detail-prop">{{detail.prop}}</div> <div class="detail-value">{{detail.value}}</div>
+
+					</div>
+				</div>
+		</div>
+		<div id="right-stock-chart">
+			<div id="chart-3-month">
+				<h3>3 Month, 10d MA</h3>
+				<img src="{{chart1}}">
+			</div>
+			<div id="chart-50-day">
+				<h3>5 month</h3>
+				<img src="{{chart2}}">
+			</div>
+
+		</div>
+
+	</div>
 	
 </body>
 </html>

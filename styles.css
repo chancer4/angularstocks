@@ -1,0 +1,111 @@
+#wrapper{
+	width: 95%;
+	height: 95vh;
+	border: 1px solid green;
+	padding: 3px;
+	margin: 15px 5px 15px 30px;
+}
+
+#left-all-stocks{
+	width: 30%;
+	height: 95vh;
+	background-color: #e0e0e0;
+	float: left;
+	
+}
+
+#center-single-stock{
+	width: 40%;
+	height: 95vh;
+	background-color: #666;
+	float: left;
+	overflow: scroll;
+	
+}
+
+#right-stock-chart{
+	width: 30%;
+	height: 95vh;
+	background-color: #e0e0e0;
+	float: left;
+}
+
+#get-stock-text{
+	text-align: center;
+}
+#get-stock-input{
+	text-align: center;
+}
+
+#Goog{
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
+#Yhoo{
+	padding-bottom: 25px;
+}
+#X{
+	padding-bottom: 25px;
+}
+
+#left-all-stocks.company-name{
+	text-decoration: underline;
+}
+
+.stock-change.change-positive{
+	color: green;
+}
+
+.stock-change{
+	color: red;
+}
+
+#stock-filter{
+	margin-top: 3%;
+	text-align: center;
+
+}
+
+#detail{
+	border: 1px solid black;
+	padding: 1%;
+	background-color: white;
+	width: 95%;
+	margin: 1% auto 1%;
+
+}
+
+.stock-properties{
+	overflow: hidden;
+}
+
+.detail-prop{
+	text-align: left;
+	padding-left: 15%;
+	float: left;
+}
+.detail-value{
+	text-align: right;
+	padding-right: 15%;
+	float: right;
+}
+
+#chart-3-month{
+	margin:auto;
+}
+
+#right-stock-chart h3{
+	margin-left: 5%;
+}
+
+#chart-3-month img{
+	width:90%;
+	margin-left: 5%;
+	
+}
+
+#chart-50-day img{
+	width: 90%;
+	margin-left: 5%;
+}
+
