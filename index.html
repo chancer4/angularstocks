@@ -22,7 +22,11 @@
 
 				<div id="get-stock-text">What Stocks would you like to search for? separate with comma (i.e. goog, hog, yhoo)</div>
 				<div id="get-stock-input" >
-					<input id="inputvalue" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control" type="text" ng-model="userStocks" ng-change="selected=userStocks">
+					<input id="inputvalue" uib-typeahead="symbol.symbol for symbol in getSymbol($viewValue) | limitTo:8" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control" type="text" ng-model="userStocks" ng-change="selected=userStocks">
+					<i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+    				<div ng-show="noResults">
+      					<i class="glyphicon glyphicon-remove"></i> No Results Found
+    				</div>
 					<input class="btn" type="submit">
 				</div>
 			</form>
